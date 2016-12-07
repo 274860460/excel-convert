@@ -44,9 +44,9 @@ public abstract class Convert {
             return;
         }
 
+
         File[] fs = f.listFiles(new FileFilter() {
 
-			@Override
 			public boolean accept(File pathname) {
 				return pathname.isFile() && !pathname.getName().startsWith("template");
 			}
@@ -85,7 +85,6 @@ public abstract class Convert {
 			list.add(map);
 		}
  		Map<String, List<Map<Integer, String>>> group = Group.create(list, new Key<String, Map<Integer, String>>() {
-			@Override
 			public String get(Map<Integer, String> v) {
 				return v.get(number);
 			}
